@@ -2,16 +2,16 @@
 
 import 'package:flutter/material.dart';
 
-
-class TictacToeHomePage extends StatelessWidget {
-  TictacToeHomePage({super.key});
+class GamePage extends StatelessWidget {
+  GamePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('HomePage'),
+        title: Text('Appbar'),
       ),
+      body: Container(),
     );
   }
 }
