@@ -15,8 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData(
-          brightness: Brightness.dark,
-          textTheme: GoogleFonts.aclonicaTextTheme()),
+        brightness: Brightness.dark,
+        textTheme: GoogleFonts.aclonicaTextTheme(),
+      ),
       themeMode: ThemeMode.dark,
       routes: {
         '/': (context) => TictacToeHomePage(),
