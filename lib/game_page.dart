@@ -24,31 +24,36 @@ class _GamePageState extends State<GamePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                alignment: Alignment.center,
-                height: 150,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('player O', style: TextStyle(color: Colors.white)),
-                        SizedBox(height: 10),
-                        Text(oScore.toString(),
-                            style: TextStyle(color: Colors.white, fontSize: 20))
-                      ],
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('player X', style: TextStyle(color: Colors.white)),
-                        SizedBox(height: 10),
-                        Text(xScore.toString(),
-                            style: TextStyle(color: Colors.white, fontSize: 20))
-                      ],
-                    ),
-                  ],
+              Expanded(
+                child: Container(
+                  alignment: Alignment.center,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('player O',
+                              style: TextStyle(color: Colors.white)),
+                          SizedBox(height: 10),
+                          Text(oScore.toString(),
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20))
+                        ],
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('player X',
+                              style: TextStyle(color: Colors.white)),
+                          SizedBox(height: 10),
+                          Text(xScore.toString(),
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20))
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Stack(
@@ -83,11 +88,11 @@ class _GamePageState extends State<GamePage> {
               GestureDetector(
                 onTap: () => _clear(),
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(40, 0, 40, 40),
+                  padding: const EdgeInsets.fromLTRB(30, 30, 30, 30),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Container(
-                      padding: EdgeInsets.all(30),
+                      padding: EdgeInsets.all(25),
                       color: Colors.white,
                       child: Center(
                         child: Text(
