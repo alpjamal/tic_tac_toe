@@ -29,7 +29,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - lib/images/
+    - assets/images/
     # - images/a_dot_burr.jpeg
 
 

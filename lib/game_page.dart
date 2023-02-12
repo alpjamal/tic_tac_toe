@@ -1,9 +1,7 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors_in_immutables, must_be_immutable
-
 import 'package:flutter/material.dart';
 
 class GamePage extends StatefulWidget {
-  GamePage({super.key});
+  const GamePage({super.key});
 
   @override
   State<GamePage> createState() => _GamePageState();
@@ -33,23 +31,17 @@ class _GamePageState extends State<GamePage> {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('player O',
-                              style: TextStyle(color: Colors.white)),
-                          SizedBox(height: 10),
-                          Text(oScore.toString(),
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20))
+                          const Text('player O', style: TextStyle(color: Colors.white)),
+                          const SizedBox(height: 10),
+                          Text(oScore.toString(), style: const TextStyle(color: Colors.white, fontSize: 20))
                         ],
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('player X',
-                              style: TextStyle(color: Colors.white)),
-                          SizedBox(height: 10),
-                          Text(xScore.toString(),
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20))
+                          const Text('player X', style: TextStyle(color: Colors.white)),
+                          const SizedBox(height: 10),
+                          Text(xScore.toString(), style: const TextStyle(color: Colors.white, fontSize: 20))
                         ],
                       ),
                     ],
@@ -58,25 +50,20 @@ class _GamePageState extends State<GamePage> {
               ),
               Stack(
                 children: [
-                  Image.asset(
-                    "lib/images/tictactoe.png",
-                    color: Colors.white70,
-                  ),
+                  Image.asset("assets/images/tictactoe.png", color: Colors.white70),
                   SizedBox(
                     height: MediaQuery.of(context).size.width,
                     child: GridView.builder(
                       itemCount: 9,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 3),
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
                       itemBuilder: (context, index) {
                         return GestureDetector(
                           onTap: () => _createChar(index),
                           child: Container(
-                            decoration: BoxDecoration(),
+                            decoration: const BoxDecoration(),
                             child: Center(
-                              child: Text(displayChar[index],
-                                  style: TextStyle(
-                                      fontSize: 16, color: Colors.white)),
+                              child:
+                                  Text(displayChar[index], style: const TextStyle(fontSize: 16, color: Colors.white)),
                             ),
                           ),
                         );
@@ -92,14 +79,10 @@ class _GamePageState extends State<GamePage> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Container(
-                      padding: EdgeInsets.all(25),
+                      padding: const EdgeInsets.all(25),
                       color: Colors.white,
-                      child: Center(
-                        child: Text(
-                          'C L E A R',
-                          style:
-                              TextStyle(color: Colors.black, letterSpacing: 3),
-                        ),
+                      child: const Center(
+                        child: Text('C L E A R', style: TextStyle(color: Colors.black, letterSpacing: 3)),
                       ),
                     ),
                   ),
@@ -137,37 +120,21 @@ class _GamePageState extends State<GamePage> {
   }
 
   void _checkWinner() {
-    if (displayChar[0] != '' &&
-        displayChar[0] == displayChar[1] &&
-        displayChar[0] == displayChar[2]) {
+    if (displayChar[0] != '' && displayChar[0] == displayChar[1] && displayChar[0] == displayChar[2]) {
       _showWinDialog(displayChar[0]);
-    } else if (displayChar[3] != '' &&
-        displayChar[3] == displayChar[4] &&
-        displayChar[3] == displayChar[5]) {
+    } else if (displayChar[3] != '' && displayChar[3] == displayChar[4] && displayChar[3] == displayChar[5]) {
       _showWinDialog(displayChar[3]);
-    } else if (displayChar[6] != '' &&
-        displayChar[6] == displayChar[7] &&
-        displayChar[6] == displayChar[8]) {
+    } else if (displayChar[6] != '' && displayChar[6] == displayChar[7] && displayChar[6] == displayChar[8]) {
       _showWinDialog(displayChar[6]);
-    } else if (displayChar[0] != '' &&
-        displayChar[0] == displayChar[3] &&
-        displayChar[0] == displayChar[6]) {
+    } else if (displayChar[0] != '' && displayChar[0] == displayChar[3] && displayChar[0] == displayChar[6]) {
       _showWinDialog(displayChar[0]);
-    } else if (displayChar[1] != '' &&
-        displayChar[1] == displayChar[4] &&
-        displayChar[1] == displayChar[7]) {
+    } else if (displayChar[1] != '' && displayChar[1] == displayChar[4] && displayChar[1] == displayChar[7]) {
       _showWinDialog(displayChar[1]);
-    } else if (displayChar[2] != '' &&
-        displayChar[2] == displayChar[5] &&
-        displayChar[2] == displayChar[8]) {
+    } else if (displayChar[2] != '' && displayChar[2] == displayChar[5] && displayChar[2] == displayChar[8]) {
       _showWinDialog(displayChar[2]);
-    } else if (displayChar[0] != '' &&
-        displayChar[0] == displayChar[4] &&
-        displayChar[0] == displayChar[8]) {
+    } else if (displayChar[0] != '' && displayChar[0] == displayChar[4] && displayChar[0] == displayChar[8]) {
       _showWinDialog(displayChar[0]);
-    } else if (displayChar[2] != '' &&
-        displayChar[2] == displayChar[4] &&
-        displayChar[2] == displayChar[6]) {
+    } else if (displayChar[2] != '' && displayChar[2] == displayChar[4] && displayChar[2] == displayChar[6]) {
       _showWinDialog(displayChar[2]);
     } else if (filledBoxes == 9) {
       _showDrawDialog();
@@ -185,8 +152,7 @@ class _GamePageState extends State<GamePage> {
 
   void _showDrawDialog() => _showdialog('The winner is not found', Colors.red);
 
-  static TextStyle alertTextStyle =
-      TextStyle(color: Colors.white, fontSize: 12);
+  static TextStyle alertTextStyle = const TextStyle(color: Colors.white, fontSize: 12);
   TextStyle alertAnswerStyle = alertTextStyle.copyWith(color: Colors.blue);
 
   void _showdialog(alert, alertColor) {
@@ -205,7 +171,7 @@ class _GamePageState extends State<GamePage> {
           textAlign: TextAlign.center,
           style: alertTextStyle,
         ),
-        contentPadding: EdgeInsets.only(bottom: 0, top: 20),
+        contentPadding: const EdgeInsets.only(bottom: 0, top: 20),
         actionsAlignment: MainAxisAlignment.spaceBetween,
         actions: [
           TextButton(

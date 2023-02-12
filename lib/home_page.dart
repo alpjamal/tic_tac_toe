@@ -1,9 +1,9 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors_in_immutables
-
 import 'package:flutter/material.dart';
 
+import './constants.dart';
+
 class TictacToeHomePage extends StatelessWidget {
-  TictacToeHomePage({super.key});
+  const TictacToeHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,13 +12,10 @@ class TictacToeHomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(
+            const Expanded(
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 50),
-                child: Text(
-                  'TIC TAC TOE',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
-                ),
+                padding: EdgeInsets.only(top: 120),
+                child: Text('TIC TAC TOE', style: kHomePageTitleTextStyle),
               ),
             ),
             Expanded(
@@ -26,10 +23,7 @@ class TictacToeHomePage extends StatelessWidget {
               child: CircleAvatar(
                 backgroundColor: Colors.transparent,
                 radius: 120,
-                child: Image.asset(
-                  'lib/images/tictactoe.png',
-                  color: Colors.white,
-                ),
+                child: Image.asset('assets/images/tictactoe.png', color: Colors.white),
               ),
             ),
             Expanded(
@@ -37,17 +31,9 @@ class TictacToeHomePage extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 80),
                 child: Column(
                   children: [
-                    Text(
-                      'Created by',
-                      style: TextStyle(
-                          fontSize: 10, color: Colors.white, letterSpacing: 3),
-                    ),
-                    SizedBox(height: 12),
-                    Text(
-                      '@alp_jamal',
-                      style: TextStyle(
-                          fontSize: 15, color: Colors.white, letterSpacing: 3),
-                    ),
+                    const Text('Created by', style: kHomePageTextStyle),
+                    const SizedBox(height: 12),
+                    Text('@alp_jamal', style: kHomePageTextStyle.copyWith(fontSize: 15)),
                   ],
                 ),
               ),
@@ -59,13 +45,10 @@ class TictacToeHomePage extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Container(
-                    padding: EdgeInsets.all(30),
+                    padding: const EdgeInsets.all(30),
                     color: Colors.white,
-                    child: Center(
-                      child: Text(
-                        'PLAY GAME',
-                        style: TextStyle(color: Colors.black),
-                      ),
+                    child: const Center(
+                      child: Text('PLAY GAME', style: TextStyle(color: Colors.black)),
                     ),
                   ),
                 ),
